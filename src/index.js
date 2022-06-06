@@ -8,14 +8,20 @@ import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 import { LayoutProvider } from "./context/LayoutContext";
 import { UserProvider } from "./context/UserContext";
+import { WarrantProvider } from "./context/WarrantContext";
+import { BuyHistProvider } from "./context/BuyHistContext";
 
 ReactDOM.render(
   <LayoutProvider>
     <UserProvider>
-      <ThemeProvider theme={Themes.default}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
+      <BuyHistProvider>
+        <WarrantProvider>
+          <ThemeProvider theme={Themes.default}>
+            <CssBaseline />
+            <App />
+          </ThemeProvider>
+        </WarrantProvider>
+      </BuyHistProvider>
     </UserProvider>
   </LayoutProvider>,
   document.getElementById("root"),

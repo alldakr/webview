@@ -1,8 +1,15 @@
 import { makeStyles } from "@material-ui/styles";
 
-const drawerWidth = 240;
+const drawerWidth = "80%";
 
-export default makeStyles(theme => ({
+export default makeStyles((theme) => ({
+  headerSpace: {
+    paddingTop: theme.spacing(3),
+    backgroundColor: "#f2f2f2",
+    height: 24,
+    padding: 0,
+  },
+
   menuButton: {
     marginLeft: 12,
     marginRight: 36,
@@ -14,6 +21,7 @@ export default makeStyles(theme => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: "nowrap",
+    overflowY: "auto",
   },
   drawerOpen: {
     width: drawerWidth,

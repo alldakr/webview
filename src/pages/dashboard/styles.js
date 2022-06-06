@@ -1,6 +1,33 @@
 import { makeStyles } from "@material-ui/styles";
 
-export default makeStyles(theme => ({
+export default makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    minWidth: "100vw",
+    overflowX: "hidden",
+    minHeight: "100vh",
+  },
+  content: {
+    flexGrow: 1,
+    // padding: theme.spacing(3),
+    width: `calc(100vw - 240px)`,
+    minHeight: "100vh",
+  },
+  contentShift: {
+    width: `calc(100vw - ${240 + theme.spacing(6)}px)`,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  fakeToolbar: {
+    ...theme.mixins.toolbar,
+  },
+  link: {
+    "&:not(:first-child)": {
+      paddingLeft: 15,
+    },
+  },
   card: {
     minHeight: "100%",
     display: "flex",
@@ -20,7 +47,7 @@ export default makeStyles(theme => ({
   },
   progress: {
     marginBottom: theme.spacing(1),
-    backgroundColor: 'rgb(236, 236, 236)',
+    backgroundColor: "rgb(236, 236, 236)",
   },
   pieChartLegendWrapper: {
     height: "100%",
@@ -117,14 +144,14 @@ export default makeStyles(theme => ({
   },
   success: {
     backgroundColor: theme.palette.success.main,
-    color: '#fff',
+    color: "#fff",
   },
   warning: {
     backgroundColor: theme.palette.warning.main,
-    color: '#fff',
+    color: "#fff",
   },
   secondary: {
     backgroundColor: theme.palette.secondary.main,
-    color: '#fff',
-  }
+    color: "#fff",
+  },
 }));

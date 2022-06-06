@@ -23,10 +23,19 @@ const overrides = {
       fontSize: "1.142rem",
     },
   },
+  breakpoints: {
+    values: {
+      lg: 620,
+      md: 610,
+      sm: 600,
+      xl: 630,
+      xs: 0,
+    },
+  },
 };
 
 const themes = {
   default: createMuiTheme({ ...defaultTheme, ...overrides }),
 };
-
+console.log("themes: ", themes);
 export default themes;
